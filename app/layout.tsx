@@ -1,14 +1,33 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
+const siteDescription =
+  "Skincare, haircare, makeup and body care in Kenya — shop online or visit our Nairobi boutique.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://darimcosmetics.co.ke"),
   title: {
     default: "Darim Luxe Cosmetics",
     template: "%s | Darim Luxe Cosmetics",
   },
-  description:
-    "Skincare, haircare, makeup and body care in Kenya — shop online or visit our Nairobi boutique.",
+  description: siteDescription,
+  openGraph: {
+    title: "Darim Luxe Cosmetics",
+    description: siteDescription,
+    siteName: "Darim Luxe Cosmetics",
+    locale: "en_KE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Darim Luxe Cosmetics",
+    description: siteDescription,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#181310",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
