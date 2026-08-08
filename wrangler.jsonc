@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "darim-luxe-cosmetics",
+  "name": "darim-cosmetics",
   "main": ".open-next/worker.js",
   "compatibility_date": "2024-12-30",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
@@ -11,7 +11,7 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "darim-luxe-cosmetics"
+      "service": "darim-cosmetics"
     }
   ],
   // The free Cloudflare D1 database that stores products, categories,

@@ -9,3 +9,6 @@ node_modules
 .open-next
 .wrangler
 cloudflare-env.d.ts
+
+# clerk configuration (can include secrets)
+/.clerk/
