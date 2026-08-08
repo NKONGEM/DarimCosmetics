@@ -19,8 +19,8 @@ export default async function AdminProductsPage() {
       {products.length === 0 ? (
         <p className="text-brand-black/60">No products yet. Add your first one to get started.</p>
       ) : (
-        <div className="bg-white border border-brand-cream-dark rounded overflow-hidden">
-          <table className="w-full text-sm">
+        <div className="bg-white border border-brand-cream-dark rounded overflow-x-auto">
+          <table className="w-full min-w-[640px] text-sm">
             <thead className="bg-brand-cream-dark text-left">
               <tr>
                 <th className="px-4 py-3">Name</th>

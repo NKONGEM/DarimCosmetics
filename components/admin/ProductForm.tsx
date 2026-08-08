@@ -20,7 +20,7 @@ export default function ProductForm({
           <input id="name" name="name" defaultValue={product?.name} required className="w-full border border-brand-cream-dark rounded px-3.5 py-2.5 text-sm" />
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="category_id" className="block text-sm font-medium mb-1">Category</label>
             <select id="category_id" name="category_id" defaultValue={product?.category_id ?? categories[0]?.id} className="w-full border border-brand-cream-dark rounded px-3.5 py-2.5 text-sm">

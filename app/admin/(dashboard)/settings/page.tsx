@@ -22,7 +22,7 @@ export default async function AdminSettingsPage() {
           <label htmlFor="announcement_text" className="block text-sm font-medium mb-1">Announcement Bar Text</label>
           <input id="announcement_text" name="announcement_text" defaultValue={settings.announcement_text ?? ""} className="w-full border border-brand-cream-dark rounded px-3.5 py-2.5 text-sm" />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="phone" className="block text-sm font-medium mb-1">Phone Number</label>
             <input id="phone" name="phone" defaultValue={settings.phone ?? ""} className="w-full border border-brand-cream-dark rounded px-3.5 py-2.5 text-sm" />
@@ -49,7 +49,7 @@ export default async function AdminSettingsPage() {
           <label htmlFor="map_url" className="block text-sm font-medium mb-1">Google Maps Link</label>
           <input id="map_url" name="map_url" type="url" defaultValue={settings.map_url ?? ""} className="w-full border border-brand-cream-dark rounded px-3.5 py-2.5 text-sm" />
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
             <label htmlFor="instagram_url" className="block text-sm font-medium mb-1">Instagram</label>
             <input id="instagram_url" name="instagram_url" type="url" defaultValue={settings.instagram_url ?? ""} className="w-full border border-brand-cream-dark rounded px-3.5 py-2.5 text-sm" />

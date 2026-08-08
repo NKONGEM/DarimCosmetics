@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getCategories, getSettings } from "@/lib/data";
 import { buildWhatsAppGeneralLink } from "@/lib/whatsapp";
+import MobileNav from "@/components/MobileNav";
 
 export default async function Header() {
   const [categories, settings] = await Promise.all([getCategories(), getSettings()]);
@@ -17,15 +18,15 @@ export default async function Header() {
         </div>
       )}
 
-      <header className="sticky top-0 z-50 bg-cream-100/95 backdrop-blur border-b border-ink-100">
-        <div className="max-w-6xl mx-auto flex items-center justify-between gap-6 px-6 md:px-10 py-5">
-          <Link href="/" className="font-serif text-2xl md:text-[26px] tracking-tight text-brand-black shrink-0">
+      <header className="sticky top-0 z-50 bg-cream-100/95 backdrop-blur border-b border-ink-100 relative">
+        <div className="max-w-6xl mx-auto flex items-center justify-between gap-3 sm:gap-6 px-4 sm:px-6 md:px-10 py-4 sm:py-5">
+          <Link href="/" className="font-serif text-xl sm:text-2xl md:text-[26px] tracking-tight text-brand-black shrink-0">
             Darim Luxe
           </Link>
 
           <nav
             aria-label="Main navigation"
-            className="hidden md:flex items-center gap-7 text-sm font-sans"
+            className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-sans"
           >
             <Link href="/" className="font-semibold text-brand-black">
               Home
@@ -53,18 +54,19 @@ export default async function Header() {
             </Link>
           </nav>
 
-          <div className="flex items-center gap-4 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             {settings.phone && (
               <span className="hidden lg:inline text-sm text-ink-500 font-sans">{settings.phone}</span>
             )}
             <a
               href={buildWhatsAppGeneralLink(settings.whatsapp_number)}
-              className="inline-flex items-center bg-brand-black text-white text-xs uppercase tracking-widest font-semibold px-4 py-2.5 rounded hover:bg-gold-600 transition-colors"
+              className="inline-flex items-center bg-brand-black text-white text-xs uppercase tracking-widest font-semibold px-3 sm:px-4 py-2.5 rounded hover:bg-gold-600 transition-colors whitespace-nowrap"
               target="_blank"
               rel="noopener noreferrer"
             >
               WhatsApp Us
             </a>
+            <MobileNav categories={categories} phone={settings.phone} />
           </div>
         </div>
       </header>
