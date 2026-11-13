@@ -14,32 +14,23 @@
     "db:seed:local": "wrangler d1 execute darim-luxe-db --local --file=./seed.sql"
   },
   "dependencies": {
-    "next": "15.5.23",
+    "@clerk/nextjs": "^7.7.1",
+    "next": "^16.4.6",
     "react": "^19.1.4",
-    "react-dom": "^19.1.4",
-    "@clerk/nextjs": "^7.7.1"
+    "react-dom": "^19.1.4"
   },
   "devDependencies": {
-    "typescript": "^5.5.4",
+    "@opennextjs/cloudflare": "^1.20.17",
     "@types/node": "^20.14.15",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.4",
-    "tailwindcss": "^3.4.7",
-    "postcss": "^8.4.40",
     "autoprefixer": "^10.4.19",
-    "@opennextjs/cloudflare": "^1.20.2",
-    "wrangler": "^4.86.0"
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.5.4",
+    "wrangler": "^4.161.0"
   },
   "overrides": {
-    "@ast-grep/napi-darwin-arm64": "0.40.5",
-    "@ast-grep/napi-darwin-x64": "0.40.5",
-    "@ast-grep/napi-linux-x64-gnu": "0.40.5",
-    "@ast-grep/napi-linux-x64-musl": "0.40.5",
-    "@ast-grep/napi-linux-arm64-gnu": "0.40.5",
-    "@ast-grep/napi-linux-arm64-musl": "0.40.5",
-    "@ast-grep/napi-win32-x64-msvc": "0.40.5",
-    "@ast-grep/napi-win32-ia32-msvc": "0.40.5",
-    "@ast-grep/napi-win32-arm64-msvc": "0.40.5",
     "fsevents": "2.3.3"
   }
 }
