@@ -1,5 +1,6 @@
 "use server";
 
+import { requireAdmin } from "@/lib/admin";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { upsertProduct, deleteProduct as deleteProductRow } from "@/lib/data";
@@ -13,6 +14,7 @@ function slugify(text: string): string {
 }
 
 export async function saveProduct(existingId: string | null, formData: FormData) {
+  await requireAdmin();
   const name = String(formData.get("name") || "").trim();
   const id = existingId || slugify(name) || `product-${Date.now()}`;
   const priceRaw = String(formData.get("price_kes") || "").trim();
@@ -38,6 +40,7 @@ export async function saveProduct(existingId: string | null, formData: FormData)
 }
 
 export async function deleteProduct(id: string) {
+  await requireAdmin();
   await deleteProductRow(id);
   revalidatePath("/admin/products");
   revalidatePath("/shop");
