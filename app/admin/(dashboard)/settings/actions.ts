@@ -1,9 +1,11 @@
 "use server";
 
+import { requireAdmin } from "@/lib/admin";
 import { revalidatePath } from "next/cache";
 import { updateSettings } from "@/lib/data";
 
 export async function saveSettings(formData: FormData) {
+  await requireAdmin();
   await updateSettings({
     business_name: String(formData.get("business_name") || "Darim Luxe Cosmetics"),
     phone: String(formData.get("phone") || "") || null,
